@@ -17,7 +17,7 @@ law_files = ["pdf/형법.pdf", "pdf/저작권법.pdf", "pdf/민법.pdf", "pdf/�
 # 모든 법률의 텍스트를 저장할 리스트
 all_texts = []
 
-# 각 법률 PDF에서 텍스트 추출
+# 각 법률 PDF에서 텍스트 추출``````````````````````````
 for law_file in law_files:
     text = extract_text_from_pdf(law_file)
     all_texts.append(text)

@@ -1,5 +1,9 @@
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
+from langchain.memory import ConversationBufferMemory
+
+# 대화형 메모리 설정
+# memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
 
 # FAISS 벡터DB 불러오기
