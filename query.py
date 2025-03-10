@@ -15,4 +15,4 @@ search_results = vectorstore.similarity_search(query, k=3)
 
 # 결과 출력
 for idx, result in enumerate(search_results):
-    print(f"🔹 {idx+1}. 관련 법률 조항:\n{result.page_content}\n")
+    print(f"{idx+1}. 관련 법률 조항:\n{result.page_content}\n")
