@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from fastapi.middleware.cors import CORSMiddleware
+import time
 
 # FastAPI 앱 생성
 app = FastAPI()
@@ -28,6 +29,8 @@ class QueryRequest(BaseModel):
 
 @app.post("/query")
 async def query_law_ai(request: QueryRequest):
+    start_time = time.time() # 시작 시간 측정
+
     query = request.question
 
     # FAISS에서 관련 법률 검색
@@ -55,4 +58,11 @@ async def query_law_ai(request: QueryRequest):
     """
 
     response = llm.invoke(prompt)
-    return {"answer": response.content}
+
+    end_time = time.time() # 끝난 시간 측정
+    elapsed_time = round(end_time - start_time, 2) # 실행 시간 계산 (소수점 2자리)
+
+    return {
+        "answer": response.content, # AI 응답
+        "elapsed_time": f"{elapsed_time}초" # 응답 시간  
+    }
