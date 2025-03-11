@@ -12,7 +12,7 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 # 저장할 법률 목록 (PDF 파일명 리스트)
-law_files = ["pdf/형법.pdf", "pdf/저작권법.pdf", "pdf/민법.pdf", "pdf/상법.pdf"]
+law_files = ["pdf/형법.pdf", "pdf/저작권법.pdf", "pdf/민법.pdf", "pdf/상법.pdf", "pdf/근로기준법.pdf"]
 
 # 모든 법률의 텍스트를 저장할 리스트
 all_texts = []
